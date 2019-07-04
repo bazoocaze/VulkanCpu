@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E13DC822-423B-40FD-A5DA-E00342466C2E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VulkanCpu.Examples</RootNamespace>
+    <AssemblyName>VulkanCpu.Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="vulkan-tutorial.com\Ex01_Presentation\HelloTriangleApplication01.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex01_Presentation\Shader_Frag_01.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex01_Presentation\Shader_Vert_01.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex02_SwapchainRecreation\HelloTriangleApplication02.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex02_SwapchainRecreation\Shader_Frag_02.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex02_SwapchainRecreation\Shader_Vert_02.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex03_VertexBuffer\HelloTriangleApplication03.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex03_VertexBuffer\Shader_Frag_03.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex03_VertexBuffer\Shader_Vert_03.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex04_StagingBuffer\HelloTriangleApplication04.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex04_StagingBuffer\Shader_Frag_04.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex04_StagingBuffer\Shader_Vert_04.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex05_IndexBuffer\HelloTriangleApplication05.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex05_IndexBuffer\Shader_Frag_05.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex05_IndexBuffer\Shader_Vert_05.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex06_DescriptorPoolAndSets\HelloTriangleApplication06.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex06_DescriptorPoolAndSets\Shader_Frag_06.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex06_DescriptorPoolAndSets\Shader_Vert_06.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex07_TextureMapping\HelloTriangleApplication07.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex07_TextureMapping\Shader_Frag_07.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex07_TextureMapping\Shader_Vert_07.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex08_DepthBuffering\HelloTriangleApplication08.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex08_DepthBuffering\Shader_Frag_08.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex08_DepthBuffering\Shader_Vert_08.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex09_LoadingModels\HelloTriangleApplication09.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex09_LoadingModels\Shader_Frag_09.cs" />
+    <Compile Include="vulkan-tutorial.com\Ex09_LoadingModels\Shader_Vert_09.cs" />
+    <Compile Include="vulkan-tutorial.com\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vulkan-tutorial.com\textures\chess01.png" />
+    <Content Include="vulkan-tutorial.com\textures\sculpture01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GlfwLib\GlfwLib.csproj">
+      <Project>{27487a7a-03ae-4fab-8bba-ebcf3fa92b3d}</Project>
+      <Name>GlfwLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StbLib\StbLib.csproj">
+      <Project>{bdd1f4e4-62c5-40d8-a5ae-a1684066df93}</Project>
+      <Name>StbLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tinyobjloaderLib\tinyobjloaderLib.csproj">
+      <Project>{ACA5522F-B799-49CD-AB0F-269BC6590488}</Project>
+      <Name>tinyobjloaderLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VulkanCpu\VulkanCpu.csproj">
+      <Project>{bcb245d8-e332-4233-9606-4007e770b0da}</Project>
+      <Name>VulkanCpu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

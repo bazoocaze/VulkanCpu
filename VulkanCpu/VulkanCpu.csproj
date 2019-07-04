@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCB245D8-E332-4233-9606-4007E770B0DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VulkanCpu</RootNamespace>
+    <AssemblyName>VulkanCpu</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\VulkanCpu.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\VulkanCpu.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>VulkanCpu.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\x64\Release\VulkanCpu.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engines\SoftwareEngine\Util\CachedStructureReader.cs" />
+    <Compile Include="Engines\SoftwareEngine\Util\VertexBufferCache.cs" />
+    <Compile Include="Platform\win32\Kernel32.cs" />
+    <Compile Include="Platform\win32\Msvcrt.cs" />
+    <Compile Include="Platform\win32\User32.cs" />
+    <Compile Include="Platform\win32\DibBitmap.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\PixelFormatConverter.cs" />
+    <Compile Include="Util\ArrayUtil.cs" />
+    <Compile Include="Util\Benchmark.cs" />
+    <Compile Include="Util\FpsControl.cs" />
+    <Compile Include="Util\FpsCounter.cs" />
+    <Compile Include="Util\GameLoop.cs" />
+    <Compile Include="Platform\win32\Gdi32.cs" />
+    <Compile Include="Util\IntrospectionUtil.cs" />
+    <Compile Include="Util\MemoryCopyHelper.cs" />
+    <Compile Include="Util\ImageLoader.cs" />
+    <Compile Include="Util\Utils.cs" />
+    <Compile Include="Engines\DummyEngine\DummyCommandBuffer.cs" />
+    <Compile Include="Engines\DummyEngine\DummyDevice.cs" />
+    <Compile Include="Engines\DummyEngine\DummyFramebuffer.cs" />
+    <Compile Include="Engines\DummyEngine\DummyGraphicsPipeline.cs" />
+    <Compile Include="Engines\DummyEngine\DummyImage.cs" />
+    <Compile Include="Engines\DummyEngine\DummyPhysicalDevice.cs" />
+    <Compile Include="Engines\DummyEngine\DummyQueue.cs" />
+    <Compile Include="Engines\DummyEngine\DummySemaphore.cs" />
+    <Compile Include="Engines\DummyEngine\DummySwapchain.cs" />
+    <Compile Include="VulkanApi\Internals\BaseSoftwareDevice.cs" />
+    <Compile Include="VulkanApi\Internals\BaseSoftwareSurface.cs" />
+    <Compile Include="VulkanApi\Internals\IVkCommandBuffer.cs" />
+    <Compile Include="VulkanApi\Internals\IVkQueue.cs" />
+    <Compile Include="VulkanApi\Internals\IVkSurface.cs" />
+    <Compile Include="Platform\win32\SoftwareFormSurface.cs" />
+    <Compile Include="VulkanApi\Internals\SoftwareInstance.cs" />
+    <Compile Include="VulkanApi\Internals\BaseSoftwarePhysicalDevice.cs" />
+    <Compile Include="VulkanApi\Internals\IVkDevice.cs" />
+    <Compile Include="VulkanApi\Internals\IVkInstance.cs" />
+    <Compile Include="VulkanApi\Internals\IVkPhysicalDevice.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareDescriptorPool.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareDescriptorSet.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareFence.cs" />
+    <Compile Include="Engines\SoftwareEngine\Shaders\SoftwareShader.cs" />
+    <Compile Include="Engines\SoftwareEngine\Shaders\ShaderLayoutAttribute.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_CopyBufferToImage.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_PipelineBarrier.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\SoftwareBufferCommand.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_BeginRenderPass.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_BindDescriptorSets.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_BindIndexBuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_BindPipeline.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_BindVertexBuffers.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_CopyBuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_Draw.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_DrawIndexed.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_EndRenderPass.cs" />
+    <Compile Include="Engines\SoftwareEngine\Commands\Cmd_End.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\BuiltinVariables.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\DataStorage.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\SoftwareDepthBuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\SoftwarePipelineProgram.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\SoftwareSampler2D.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\StageType.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\PrimitiveContext.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareBuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareCommandBuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareCommandPool.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareDevice.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareDeviceMemory.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareEngineFactory.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareExecutionContext.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareFramebuffer.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareImage.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareImageView.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwarePhysicalDevice.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwarePipeline.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareQueue.cs" />
+    <Compile Include="Engines\SoftwareEngine\Graphics\SoftwareRasterizer.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareRenderPass.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareSampler.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareSemaphore.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareShaderModule.cs" />
+    <Compile Include="Engines\SoftwareEngine\SoftwareSwapchain.cs" />
+    <Compile Include="VulkanApi\Utils\VkArrayUtil.cs" />
+    <Compile Include="VulkanApi\Utils\VkPreconditions.cs" />
+    <Compile Include="VulkanApi\Utils\VkReflectionUtil.cs" />
+    <Compile Include="VulkanApi\VkApiVersion.cs" />
+    <Compile Include="VulkanApi\VkApplicationInfo.cs" />
+    <Compile Include="VulkanApi\VkBool32.cs" />
+    <Compile Include="VulkanApi\VkBufferCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkBufferImageCopy.cs" />
+    <Compile Include="VulkanApi\VkCommandBufferAllocateInfo.cs" />
+    <Compile Include="VulkanApi\VkCommandPoolCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkDebugReportCallbackEXT.cs" />
+    <Compile Include="VulkanApi\VkDescriptorPoolCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkDescriptorSetLayoutCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkDeviceCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkDeviceQueueCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkExtensionNames.cs" />
+    <Compile Include="VulkanApi\VkExtent2D.cs" />
+    <Compile Include="VulkanApi\VkFormat.cs" />
+    <Compile Include="VulkanApi\VkFramebufferCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkGraphicsPipelineCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkImageCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkMemoryBarrier.cs" />
+    <Compile Include="VulkanApi\VkImageViewCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkInstanceCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkLayerProperties.cs" />
+    <Compile Include="VulkanApi\VkPhysicalDeviceProperties.cs" />
+    <Compile Include="VulkanApi\VkPipelineLayoutCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineColorBlendAttachmentState.cs" />
+    <Compile Include="VulkanApi\VkPipelineColorBlendStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineDepthStencilStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineInputAssemblyStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineMultisampleStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineRasterizationStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineShaderStageCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineVertexInputStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPipelineViewportStateCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkPresentInfoKHR.cs" />
+    <Compile Include="VulkanApi\VkQueueFamilyProperties.cs" />
+    <Compile Include="VulkanApi\VkRenderPassCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkSamplerCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkSemaphoreCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkShaderModuleCreateInfo.cs" />
+    <Compile Include="VulkanApi\VkStructureType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VulkanApi\VkResult.cs" />
+    <Compile Include="VulkanApi\VkSurfaceCapabilitiesKHR.cs" />
+    <Compile Include="VulkanApi\VkSurfaceFormatKHR.cs" />
+    <Compile Include="VulkanApi\VkSwapchainCreateInfoKHR.cs" />
+    <Compile Include="VulkanApi\VkVertexInputBindingDescription.cs" />
+    <Compile Include="VulkanApi\VkViewport.cs" />
+    <Compile Include="VulkanApi\VkWin32SurfaceCreateInfoKHR.cs" />
+    <Compile Include="VulkanApi\Vulkan.cs" />
+    <Compile Include="VulkanApi\VulkanInterfaces.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
